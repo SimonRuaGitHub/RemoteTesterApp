@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-green.min.css" /> 
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="css/utility.css"/>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script type="text/javascript" src="lib/angularjs/angular.min.js"></script> 
+        <script type="text/javascript" src="lib/jquery/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="js/moduleProjects.js"></script> 
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+             <header class="mdl-layout__header">
+                        <span class="mdl-layout-title customPaddingBrand">
+                             <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                                   <i class="material-icons">menu</i>
+                             </button>
+                             Home
+                        </span>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                            <li class="mdl-menu__item">Info App<i class="material-icons">note</i></li>
+                            <li class="mdl-menu__item">Cerrar sesion<i class="material-icons">power_settings_new</i></li>
+                       </ul>
+              </header>
+              <main class="mdl-layout__content">
+                  <div class="page-content">
+                      <div class="mdl-grid" ng-app="projectApp" ng-controller="controllerProject">
+                          <div class="mdl-cell mdl-cell--12-col">
+                              <h7><p><b>Proyectos</b></h7>
+                              <ul class="demo-list-item mdl-list">
+                                <li class="mdl-list__item mdl-list__item--three-line">
+                                  <span class="mdl-list__item-primary-content">
+                                      <span>Proyecto MuseumLucky</span>
+                                      <span class="mdl-list__item-text-body">
+                                         Proyecto para la gestion de catalogos de obra
+                                      </span>
+                                  </span>
+                                </li>
+                                <li class="mdl-list__item mdl-list__item--three-line">
+                                  <span class="mdl-list__item-primary-content">
+                                      <span>Proyecto Finanzas</span>
+                                      <span class="mdl-list__item-text-body">
+                                         Proyecto para la gestion de finanzas personales
+                                      </span>
+                                  </span>
+                                </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </main>
+        </div>
+    </body>
+</html>
