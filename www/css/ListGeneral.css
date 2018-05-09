@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/08/2017, 03:35:27 PM
+    Author     : Simon Rua
+*/
+
+.space-between-cards{
+    margin-top: 10px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.piece-name-space-img {
+    padding-left: 20px;
+}
+
+#lbSearch{
+    padding: 10px;
+}
+
+#lbSearchTc{
+    padding: 25px;
+}
+
+#divExpandableSearch{
+    margin-left: 70px;
+}
+
+#title-piece-location {
+    padding-top: 40px;
+    margin-left: -65px;
+    text-align: left;
+}
+
+#img-piece{
+    margin-right: 80px;
+}

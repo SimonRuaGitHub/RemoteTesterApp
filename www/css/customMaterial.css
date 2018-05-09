@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 5, 2018, 9:55:44 PM
+    Author     : simon.rua
+*/
+
+.mdl-list__item--three-line .mdl-list__item-primary-content{
+    height: auto;
+}
+
+.mdl-list__item--three-line{
+    height: auto;
+}
+
+.md-checkbox{
+    margin: 7px 0;
+}
+
+.failed{
+    color: #F44336;
+}
+
+.successfull{
+    color: #4CAF50;
+}
+
+.impeded{
+    color: #FF9800;
+}

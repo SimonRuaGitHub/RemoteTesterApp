@@ -1,34 +1,36 @@
-var piecesApp = angular.module('projectApp',[]);
+var piecesApp = angular.module('projectApp',['usersApp']);
 
 piecesApp.controller('controllerProject',function($scope,$http) 
-{  
-       $http({
-                url: "http://192.168.1.55/museo/baseDeDatos/ObrasControlador.php",
+{           
+        console.log(localStorage.getItem("username"));
+        
+        $http({
+                url: "http://localhost:8084/TestExpositor/rest/expositorProjects/allProjectsByUser",
                 method: "POST",
                 data: {
-                        'accion': "consultarObrasVisitante",
+                        'username': localStorage.getItem("username")
                       },
-                contentType: 'application/json',
-                dataType: 'json',
                 headers: {'Content-Type': 'application/json'}
             }).then(function successCallback(response) 
                {
                     // this callback will be called asynchronously
                     // when the response is available
-                    $scope.pieces = response.data;
+                    console.log(response.data);
+                    
+                    $scope.projects = response.data;
+                    
                 }, function errorCallback(response) {
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                     alert("Error requesting service");
             });
             
-       $scope.showInfoPiece = function (piece)
-       {
-             $scope.psImage = piece.imagen;
-             $scope.psName = piece.nombre;
-             $scope.psLocation = piece.sala;
-             $scope.psDesc = piece.descripcion;
-             $('#starks-panel').removeClass('is-active');
-             $('#lannisters-panel').addClass('is-active');
-       }
+        $scope.searchSuiteTestCases = function(project)
+        {
+               localStorage.setItem("projectCode",project.codigo);
+               localStorage.setItem("projectName",project.nombre);
+               
+               console.log(localStorage.getItem("projectCode"));
+               window.location.href = "suite_casos.html";
+        }
 });

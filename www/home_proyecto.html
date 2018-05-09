@@ -13,8 +13,10 @@ and open the template in the editor.
         <link rel="stylesheet" href="lib/mdl/material.min.css"/>
         <script src="lib/mdl/material.min.js"></script>
         <link rel="stylesheet" href="css/utility.css"/>
+        <link rel="stylesheet" href="css/ListGeneral.css" />
         <script type="text/javascript" src="lib/angularjs/angular.min.js"></script> 
         <script type="text/javascript" src="lib/jquery/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="js/moduleUser.js"></script> 
         <script type="text/javascript" src="js/moduleProjects.js"></script> 
     </head>
     <body>
@@ -28,7 +30,7 @@ and open the template in the editor.
                         </span>
                         <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
                             <li class="mdl-menu__item">Info App<i class="material-icons">note</i></li>
-                            <li class="mdl-menu__item">Cerrar sesion<i class="material-icons">power_settings_new</i></li>
+                            <li class="mdl-menu__item" onclick="location.href='index.html'">Cerrar sesion<i class="material-icons">power_settings_new</i></li>
                        </ul>
               </header>
               <main class="mdl-layout__content">
@@ -37,19 +39,21 @@ and open the template in the editor.
                           <div class="mdl-cell mdl-cell--12-col">
                               <h7><p><b>Proyectos</b></h7>
                               <ul class="demo-list-item mdl-list">
-                                <li class="mdl-list__item mdl-list__item--three-line">
+                                  <!-- search piece filter by piece name -->
+                                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                                 <label class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect mdl-button--accent" for="searchText" id="lbSearch">
+                                                   <i class="material-icons">search</i>
+                                                 </label>
+                                                 <div id="divExpandableSearch" class="mdl-textfield__expandable-holder">
+                                                     <input class="mdl-textfield__input" type="text" id="searchText" ng-model="projectName" placeholder="Buscar Proyecto"/>
+                                                     <label  class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                                 </div>
+                                 </div>
+                                  <li ng-repeat="project in projects | filter:projectName" class="mdl-list__item mdl-list__item--three-line" ng-dblclick="searchSuiteTestCases(project)">
                                   <span class="mdl-list__item-primary-content">
-                                      <span><a ng-href="casos_prueba.html">Proyecto MuseumLucky</a></span>
+                                      <span><a>{{project.nombre}}</a></span>
                                       <span class="mdl-list__item-text-body">
-                                         Proyecto para la gestion de catalogos de obra
-                                      </span>
-                                  </span>
-                                </li>
-                                <li class="mdl-list__item mdl-list__item--three-line">
-                                  <span class="mdl-list__item-primary-content">
-                                      <span><a ng-href="casos_prueba.html">Proyecto Finanzas</a></span>
-                                      <span class="mdl-list__item-text-body">
-                                         Proyecto para la gestion de finanzas personales
+                                         {{project.descripcion}}
                                       </span>
                                   </span>
                                 </li>

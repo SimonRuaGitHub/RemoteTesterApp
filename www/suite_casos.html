@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="lib/mdl/material.min.css"/>
+        <script src="lib/mdl/material.min.js"></script>
+        <link rel="stylesheet" href="css/utility.css"/>
+        <link rel="stylesheet" href="css/newcss.css"/>
+        <link rel="stylesheet" href="css/customMaterial.css" />
+        <link rel="stylesheet" href="css/ListGeneral.css" />
+        <script type="text/javascript" src="lib/angularjs/angular.min.js"></script> 
+        <script type="text/javascript" src="lib/jquery/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="js/moduleProjects.js"></script>
+        <script type="text/javascript" src="js/moduleTestCases.js"></script> 
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-app="testCasesApp"  ng-controller="controllerTestCase">
+             <header class="mdl-layout__header">
+                        <span class="mdl-layout-title customPaddingBrand">
+                             <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                                   <i class="material-icons">menu</i>
+                             </button>
+                             {{ projectName }}
+                        </span>
+                        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                            <li class="mdl-menu__item">Info App<i class="material-icons">note</i></li>
+                            <li class="mdl-menu__item" onclick="location.href='index.html'">Cerrar sesion<i class="material-icons">power_settings_new</i></li>
+                       </ul>
+              </header>
+              <main class="mdl-layout__content">
+                  <div class="page-content">
+                      <div class="mdl-grid">
+                          <div class="mdl-cell mdl-cell--12-col">
+                              <h7><p>Suite de Casos Prueba</h7>
+                              <ul class="demo-list-item mdl-list">
+                                  <div class="md-checkbox">
+                                           <input id="allTcs" type="checkbox" ng-click="selectAllTestCases()">
+                                           <label for="allTcs">Seleccionar todos</label>
+                                  </div>
+                                   <!-- search piece filter by piece name -->
+                                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                                 <label class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect mdl-button--accent" for="searchText" id="lbSearchTc">
+                                                   <i class="material-icons">search</i>
+                                                 </label>
+                                                 <div id="divExpandableSearch" class="mdl-textfield__expandable-holder">
+                                                     <input class="mdl-textfield__input" type="text" id="searchText" ng-model="tcName" placeholder="Buscar Caso"/>
+                                                     <label  class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                                 </div>
+                                 </div>
+                                  <li ng-repeat="tc in testCases | filter:tcName" class="mdl-list__item mdl-list__item--three-line">
+                                  <span class="mdl-list__item-primary-content">
+                                      <span>{{ tc.codigoCaso }} {{ tc.nombre }}</span>
+                                      <span class="mdl-list__item-text-body">
+                                         <span class="mdl-list__item-secondary-action">
+                                             estado: <label id="{{ tc.codigoCaso }}Result"></label>
+                                         </span>
+                                       <div class="md-checkbox">
+                                           <input id="{{ tc.codigoCaso }}" type="checkbox" ng-click="queueTestCase(tc)" name="chTestCase">
+                                           <label for="{{ tc.codigoCaso}}"></label>
+                                       </div> 
+                                      </span>
+                                  </span>
+                                  </li>
+                              </ul>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="executeTestCaseSet()">
+                                       EJECUTAR CASOS PRUEBA
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </main>
+        </div>
+    </body>
+</html>

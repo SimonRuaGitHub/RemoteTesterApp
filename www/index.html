@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-green.min.css" /> 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="lib/mdl/material.min.css"/>
+        <script src="lib/mdl/material.min.js"></script>
         <link rel="stylesheet" href="css/utility.css"/>
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <script type="text/javascript" src="lib/angularjs/angular.min.js"></script> 
         <script type="text/javascript" src="lib/jquery/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/moduleUser.js"></script> 
@@ -32,7 +32,7 @@
                             <label class="mdl-textfield__label" for="sample1">Contraseña</label>
                         </div>
                         <br>
-                        <button ng-click="validateUserExistDummy()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                        <button ng-click="validateUserExist()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
                            INGRESAR
                         </button>
                         <br>
